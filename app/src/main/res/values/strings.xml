@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidCardGame</string>
+    <string name="battle">BATTLE</string>
+    <string name="congrats">Congratulations! You win!</string>
+    <string name="restart">Restart</string>
+    <string name="activity_detail">Necromancy News</string>
+    <string name="news_action_bar">News</string>
+    <string name="playerInfo_action_bar">Player Info</string>
+    <string name="settings_action_bar_title">Settings</string>
+    <string name="player_actionbarTitle">Player</string>
+    <string name="encyclopedia_actionBarTitle">Encyclopedia</string>
+    <string name="description_manage_hats">You have enough skill points to unlock this item. Click in the button \"Unlock\" to unlock it. Then you can equip it</string>
+</resources>

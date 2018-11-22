@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.portalmafia.androidcardgame">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewsActivity"
+            android:label="@string/news_action_bar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PlayerInfoActivity"
+            android:label="@string/player_actionbarTitle"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_action_bar_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".RewardActivity"
+            android:label="Your daily gift"
+            android:parentActivityName=".NewsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EncyclopediaActivity"
+            android:label="@string/encyclopedia_actionBarTitle"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ManageHatsActivity"
+            android:label="Helmets Zone"
+            android:parentActivityName=".PlayerInfoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ManageSkillsActivity"
+            android:label="Manage character skills"
+            android:parentActivityName=".PlayerInfoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+        </activity>
+        <activity
+            android:name=".NewsArticleActivity"
+            android:label="Article Title"
+            android:parentActivityName=".NewsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.portalmafia.androidcardgame.MainActivity" />
+            >
+        </activity>
+    </application>
+
+</manifest>
