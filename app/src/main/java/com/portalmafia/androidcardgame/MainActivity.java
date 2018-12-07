@@ -45,6 +45,8 @@ public class MainActivity extends Activity {
     Typeface font;
 
     Random r;
+    String username;
+    String password;
 
     int maxScore = 7;
     int leftScore, rightScore = 0;
@@ -87,7 +89,14 @@ public class MainActivity extends Activity {
         buttonEncyclopedia.setTypeface(font);
         mResult = (TextView) findViewById(R.id.encyText);
 
-        new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username=test&password=pass");
+        // get the variables from the singleton
+        necromancyData.SetUsername("joao");
+        necromancyData.SetPassword("joao");
+
+        password = necromancyData.GetPassword();
+        username = necromancyData.GetUsername();
+
+        new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username="+username+ "&password="+password);
           singleton = AppManager.getInstance();
 
         // Listen Restart button which will restart the gam
@@ -200,6 +209,9 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String result) {
             int aJsonInt = 0;
             int coins = 0;
+            int BestRound = 0;
+            int MoneyEarned = 0;
+            int EnemiesKilled = 0;
 
             try
             {
@@ -210,7 +222,14 @@ public class MainActivity extends Activity {
                 JSONObject dataObj = accountObj.getJSONObject("data");
 
                 coins = dataObj.getInt("coins");
-                necromancyData.SetCoins(20);
+                BestRound = dataObj.getInt("BestRound");
+                MoneyEarned = dataObj.getInt("MoneyEarned");
+                EnemiesKilled = dataObj.getInt("EnemiesKilled");
+
+
+                necromancyData.SetBestRound(BestRound);
+                necromancyData.SetMoneyEarned(MoneyEarned);
+                necromancyData.SetEnemiesKilled(EnemiesKilled);
 
             }
             catch(Exception e){

@@ -6,6 +6,12 @@ public class NecromancyData extends Application {
 
     private String Username;
     private String Password;
+
+    private int BestRound;
+    private int EnemiesKilled;
+    private int MoneyEarned;
+
+
     private int Coins;
 
     public void onCreate()
@@ -33,6 +39,37 @@ public class NecromancyData extends Application {
     public void SetPassword(String password)
     {
         Password = password;
+    }
+
+    public int GetBestRound()
+    {
+        return BestRound;
+    }
+
+    public void SetBestRound(int bestRoundToSet)
+    {
+        BestRound = bestRoundToSet;
+    }
+
+    public int GetEnemiesKilled()
+    {
+        return EnemiesKilled;
+    }
+
+    public void SetEnemiesKilled(int enemiesKilledToSet)
+    {
+        EnemiesKilled = enemiesKilledToSet;
+
+    }
+
+    public int GetMoneyEarned()
+    {
+        return MoneyEarned;
+    }
+
+    public void SetMoneyEarned(int moneyEarnedToSet)
+    {
+        MoneyEarned = moneyEarnedToSet;
     }
 
     public int getCoins()
