@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -15,6 +17,8 @@ public class NewsActivity extends AppCompatActivity {
     Class[] ActivitiesClass = new Class[1];
     Intent[] intents = new Intent[1];
 
+    private WebView newsWebView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,28 +27,15 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        articleButton = findViewById(R.id.button_openArticle);
+        //articleButton = findViewById(R.id.button_openArticle);
         ActivitiesClass[0] = NewsArticleActivity.class;
 
-        ButtonActivityListener(articleButton, 0);
+        newsWebView = findViewById(R.id.newsWebView);
+        newsWebView.setWebViewClient(new WebViewClient());
+        newsWebView.loadUrl("http://necromancy.portalmafia.com/data/?cat=2");
+
 
 
     }
 
-    private void ButtonActivityListener(ImageButton buttonNews, final int activityIndex)
-    {
-        buttonNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChangeActivity(v,activityIndex );
-            }
-        });
-    }
-
-    public void ChangeActivity(View view, int index)
-    {
-        intents[index] = new Intent();
-        intents[index].setClass(this, ActivitiesClass[index]);
-        startActivity(intents[index]);
-    }
 }
