@@ -30,7 +30,7 @@ public class PlayerInfoActivity extends AppCompatActivity {
     Button ManageHats, ManageSkills;
     NecromancyData necromancyData;
 
-
+    String username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,14 @@ public class PlayerInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player_info);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         necromancyData = ((NecromancyData) getApplicationContext());
+
+        necromancyData.SetUsername("joao");
+        necromancyData.SetPassword("joao");
+
+        password = necromancyData.GetPassword();
+        username = necromancyData.GetUsername();
+
+        new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username="+username+ "&password="+password);
 
 
         ActivitiesClass[0] = ManageSkillsActivity.class;

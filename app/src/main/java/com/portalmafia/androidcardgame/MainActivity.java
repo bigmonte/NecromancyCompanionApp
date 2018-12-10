@@ -97,7 +97,6 @@ public class MainActivity extends Activity {
         username = necromancyData.GetUsername();
 
         new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username="+username+ "&password="+password);
-          singleton = AppManager.getInstance();
 
         // Listen Restart button which will restart the gam
 
