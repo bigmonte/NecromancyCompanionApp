@@ -115,24 +115,12 @@
     <ImageButton
         android:id="@+id/openGiftButton"
         android:layout_width="236dp"
-        android:layout_height="74dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@null"
-        android:src="@drawable/dailyreward"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="242dp"
-        android:layout_height="88dp"
+        android:layout_height="194dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/companionapptitle"
+        android:background="@null"
+        android:src="@drawable/dailyreward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />

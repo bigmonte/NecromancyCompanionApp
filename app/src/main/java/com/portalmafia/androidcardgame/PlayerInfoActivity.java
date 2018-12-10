@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.json.JSONObject;
 
@@ -19,16 +20,21 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Random;
 
 public class PlayerInfoActivity extends AppCompatActivity {
 
     Class[] ActivitiesClass = new Class[2];
     Intent[] intents = new Intent[2];
+
+    NecromancyData necromancyData;
+
     Typeface font;
 
     Button ManageHats, ManageSkills;
-    NecromancyData necromancyData;
+
+    TextView BestRoundResultText, EnemiesKilledResultText, MoneyEarnedResultText;
 
     String username, password;
 
@@ -52,9 +58,16 @@ public class PlayerInfoActivity extends AppCompatActivity {
         ActivitiesClass[1] = ManageHatsActivity.class;
         font = Typeface.createFromAsset(getAssets(), "fonts/curse.ttf");
 
-
+        // buttons
         ManageSkills = findViewById(R.id.button_player_manageSkills);
         ManageHats = findViewById(R.id.button_player_manageHats);
+
+        // text Results
+
+        BestRoundResultText = findViewById(R.id.BestRoundResult);
+        EnemiesKilledResultText = findViewById(R.id.EnemiesKilledResult);
+        MoneyEarnedResultText = findViewById(R.id.MoneyEarnedResult);
+
 
         ManageSkills.setTypeface(font);
         ManageHats.setTypeface(font);
@@ -126,10 +139,9 @@ public class PlayerInfoActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            int SkillDamage = 0;
-            int SkillVelocity = 0;
-            int SkillExtraHealth = 0;
-            int SkillReloadTime = 0;
+            int BestRound = 0;
+            int EnemiesKilled = 0;
+            int MoneyEarned = 0;
 
 
 
@@ -139,17 +151,17 @@ public class PlayerInfoActivity extends AppCompatActivity {
                 JSONObject dataObj = accountObj.getJSONObject("data");
 
 
-                SkillDamage = dataObj.getInt("SkillDamage");
-                SkillVelocity = dataObj.getInt("SkillVelocity");
-                SkillExtraHealth = dataObj.getInt("SkillExtraHealth");
-                SkillReloadTime = dataObj.getInt("SkillReloadTime");
+                BestRound = dataObj.getInt("BestRound");
+                EnemiesKilled = dataObj.getInt("EnemiesKilled");
+                MoneyEarned = dataObj.getInt("MoneyEarned");
 
-                necromancyData.SetSkillDamage(SkillDamage);
-                necromancyData.SetSkillVelocity(SkillVelocity);
-                necromancyData.SetSkillExtraHealth(SkillExtraHealth);
-                necromancyData.SetSkillReloadTime(SkillReloadTime);
+                necromancyData.SetBestRound(BestRound);
+                necromancyData.SetEnemiesKilled(EnemiesKilled);
+                necromancyData.SetMoneyEarned(MoneyEarned);
 
-
+                BestRoundResultText.setText(String.format(Locale.US,"%d", BestRound));
+                EnemiesKilledResultText.setText(String.format(Locale.US,"%d", EnemiesKilled));
+                MoneyEarnedResultText.setText(String.format(Locale.US,"%d", MoneyEarned));
 
 
             } catch (Exception e) {
