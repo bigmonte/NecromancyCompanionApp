@@ -238,7 +238,7 @@ public class MainActivity extends Activity {
 
             // set data response to textView
 
-            mResult.setText("status: " + necromancyData.getCoins()+" ok: " + coins);
+           // mResult.setText("status: " + necromancyData.getCoins()+" ok: " + coins);
 
 //            if(progressDialog != null)
 //            {
