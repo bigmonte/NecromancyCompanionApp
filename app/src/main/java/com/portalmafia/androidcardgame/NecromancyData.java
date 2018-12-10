@@ -11,6 +11,11 @@ public class NecromancyData extends Application {
     private int EnemiesKilled;
     private int MoneyEarned;
 
+    private int SkillDamage;
+    private int SkillVelocity;
+    private int SkillExtraHealth;
+    private int SkillReloadTime;
+
 
     private int Coins;
 
@@ -80,5 +85,45 @@ public class NecromancyData extends Application {
     public void SetCoins(int coins)
     {
         Coins = coins;
+    }
+
+    public int getSkillDamage()
+    {
+        return SkillDamage;
+    }
+
+    public void SetSkillDamage(int points)
+    {
+        SkillDamage = points;
+    }
+
+    public int getSkillVelocity()
+    {
+        return SkillVelocity;
+    }
+
+    public void SetSkillVelocity(int points)
+    {
+        SkillVelocity = points;
+    }
+
+    public int getSkillExtraHealth()
+    {
+        return SkillExtraHealth;
+    }
+
+    public void SetSkillExtraHealth(int points)
+    {
+        SkillExtraHealth = points;
+    }
+
+    public int getSkillReloadTime()
+    {
+        return SkillExtraHealth;
+    }
+
+    public void SetSkillReloadTime(int points)
+    {
+        SkillReloadTime = points;
     }
 }
