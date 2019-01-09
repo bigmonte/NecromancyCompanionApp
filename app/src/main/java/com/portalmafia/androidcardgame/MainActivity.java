@@ -98,6 +98,12 @@ public class MainActivity extends Activity {
 
         new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username="+username+ "&password="+password);
 
+        //new PutDataTask().execute("http://10.0.2.2:8080/api/saveData?username="+username+ "&password="+password+"&data={\"coins\":%20100");
+
+
+        // http://localhost:8080/api/saveData?username=test&password=pass&data={"coins":%20100}
+
+
         // Listen Restart button which will restart the gam
 
         // 0 - News
@@ -164,10 +170,6 @@ public class MainActivity extends Activity {
         @Override
         protected void onPreExecute() {
            super.onPreExecute();
-//            progressDialog = new ProgressDialog(MainActivity.this);
-//            progressDialog.setMessage(("loading data..."));
-//            progressDialog.show();
-
         }
 
         @Override
@@ -220,7 +222,7 @@ public class MainActivity extends Activity {
                 JSONObject accountObj = jsonObject.getJSONObject("account");
                 JSONObject dataObj = accountObj.getJSONObject("data");
 
-                coins = dataObj.getInt("coins");
+                //coins = dataObj.getInt("coins");
                 BestRound = dataObj.getInt("BestRound");
                 MoneyEarned = dataObj.getInt("MoneyEarned");
                 EnemiesKilled = dataObj.getInt("EnemiesKilled");

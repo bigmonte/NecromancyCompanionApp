@@ -12,13 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".TestActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".NewsActivity"
             android:label="@string/news_action_bar"
@@ -84,13 +86,15 @@
                 android:value="com.portalmafia.androidcardgame.MainActivity" />
             >
         </activity>
-        <activity android:name=".OpenedReward"
-            android:label ="Your Reward"
+        <activity
+            android:name=".OpenedReward"
+            android:label="Your Reward"
             android:parentActivityName=".RewardActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.portalmafia.androidcardgame.MainActivity" />
         </activity>
+
     </application>
 
 </manifest>
