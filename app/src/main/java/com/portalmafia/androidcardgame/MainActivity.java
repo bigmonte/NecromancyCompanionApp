@@ -43,13 +43,12 @@ public class MainActivity extends Activity {
     ImageButton openGift;
     String gameCompetitionStatus = "competing";
     Typeface font;
+    TextView cumpliment;
 
     Random r;
     String username;
     String password;
 
-    int maxScore = 7;
-    int leftScore, rightScore = 0;
     AppManager singleton;
 
     @Override
@@ -78,6 +77,8 @@ public class MainActivity extends Activity {
         buttonEncyclopedia = findViewById(R.id.buttonEncyclopedia);
         openGift = findViewById(R.id.openGiftButton);
 
+        cumpliment = findViewById(R.id.cumpliment);
+
         font = Typeface.createFromAsset(getAssets(), "fonts/curse.ttf");
 
 
@@ -89,15 +90,10 @@ public class MainActivity extends Activity {
         buttonEncyclopedia.setTypeface(font);
         mResult = (TextView) findViewById(R.id.encyText);
 
-        // get the variables from the singleton
-        necromancyData.SetUsername("joao");
-        necromancyData.SetPassword("joao");
-
         password = necromancyData.GetPassword();
         username = necromancyData.GetUsername();
 
-        new GetDataTask().execute("http://10.0.2.2:8080/api/getData?username="+username+ "&password="+password);
-
+        cumpliment.setText(String.format("Welcome again %s, check your nugget profile!", username));
         //new PutDataTask().execute("http://10.0.2.2:8080/api/saveData?username="+username+ "&password="+password+"&data={\"coins\":%20100");
 
 

@@ -48,6 +48,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/button_player_manageHats"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -55,12 +56,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
             android:text="Helmets"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_player_manageSkills" />
 
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/button_player_manageSkills"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -68,6 +71,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="36dp"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
             android:text="Skills"
             app:layout_constraintEnd_toStartOf="@+id/cardRightImage"
             app:layout_constraintHorizontal_bias="0.0"
@@ -93,8 +97,8 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="187dp"
-        android:layout_height="61dp"
+        android:layout_width="147dp"
+        android:layout_height="36dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -105,7 +109,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/BestRoundLabel"
